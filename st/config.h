@@ -97,24 +97,24 @@ unsigned int tabspaces = 2;
 static const char *colorname[] = {
   // Everblush colorscheme from https://gogh-co.github.io/Gogh/
 	/* 8 normal colors */
-  [0] = "#232A2D", /* black */
-  [1] = "#E57474", /* red     */
-  [2] = "#8CCF7E", /* green   */
-  [3] = "#E5C76B", /* yellow  */
-  [4] = "#67B0E8", /* blue    */
-  [5] = "#C47FD5", /* magenta */
-  [6] = "#6CBFBF", /* cyan    */
-  [7] = "#B3B9B8", /* white   */
+  [0] = "#343935", /* black */
+  [1] = "#CF3F61", /* red     */
+  [2] = "#7BB75B", /* green   */
+  [3] = "#E9B32A", /* yellow  */
+  [4] = "#4C9AD4", /* blue    */
+  [5] = "#A57FC4", /* magenta */
+  [6] = "#389AAD", /* cyan    */
+  [7] = "#FAFAF6", /* white   */
 
 	/* 8 bright colors */
-  [8]  = "#2D3437", /* black   */
-  [9]  = "#EF7E7E", /* red     */
-  [10] = "#96D988", /* green   */
-  [11] = "#F4D67A", /* yellow  */
-  [12] = "#71BAF2", /* blue    */
-  [13] = "#CE89DF", /* magenta */
-  [14] = "#67CBE7", /* cyan    */
-  [15] = "#BDC3C2", /* white   */
+  [8]  = "#595B59", /* black   */
+  [9]  = "#D18FA6", /* red     */
+  [10] = "#767F2C", /* green   */
+  [11] = "#78592F", /* yellow  */
+  [12] = "#135979", /* blue    */
+  [13] = "#604291", /* magenta */
+  [14] = "#76BBCA", /* cyan    */
+  [15] = "#B2B5AE", /* white   */
 };
 
 
