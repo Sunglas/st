@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Nerd Font:pixelsize=12:antialias=true:autohint=true";
-static int borderpx = 0;
+static char *font = "JetBrainsMono Nerd Font:pixelsize=15:antialias=true:autohint=true";
+static int borderpx = 8;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -16,7 +16,7 @@ static int borderpx = 0;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/zsh";
+static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -45,7 +45,7 @@ int allowaltscreen = 1;
 
 /* allow certain non-interactive (insecure) window operations such as:
    setting the clipboard text */
-int allowwindowops = 1;
+int allowwindowops = 0;
 
 /*
  * draw latency range in ms - from new content/keypress/etc until drawing.
@@ -53,7 +53,7 @@ int allowwindowops = 1;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 4;
+static double minlatency = 8;
 static double maxlatency = 33;
 
 /*
@@ -65,7 +65,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 1;
+static unsigned int cursorthickness = 2;
 
 /*
  * 1: render most of the lines/blocks characters without using the font for
@@ -103,41 +103,48 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 2;
+unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  // Everblush colorscheme from https://gogh-co.github.io/Gogh/
 	/* 8 normal colors */
-  [0] = "#343935", /* black */
-  [1] = "#CF3F61", /* red     */
-  [2] = "#7BB75B", /* green   */
-  [3] = "#E9B32A", /* yellow  */
-  [4] = "#4C9AD4", /* blue    */
-  [5] = "#A57FC4", /* magenta */
-  [6] = "#389AAD", /* cyan    */
-  [7] = "#FAFAF6", /* white   */
+	[0] = "#323437",
+	[1] = "#ff5454",
+	[2] = "#8cc85f",
+	[3] = "#e3c78a",
+	[4] = "#80a0ff",
+	[5] = "#d183e8",
+	[6] = "#79dac8",
+	[7] = "#a1aab8",
 
 	/* 8 bright colors */
-  [8]  = "#595B59", /* black   */
-  [9]  = "#D18FA6", /* red     */
-  [10] = "#767F2C", /* green   */
-  [11] = "#78592F", /* yellow  */
-  [12] = "#135979", /* blue    */
-  [13] = "#604291", /* magenta */
-  [14] = "#76BBCA", /* cyan    */
-  [15] = "#B2B5AE", /* white   */
+	[8] = "#7c8f8f",
+	[9] = "#ff5189",
+	[10] = "#36c692",
+	[11] = "#bfbf97",
+	[12] = "#74b2ff",
+	[13] = "#ae81ff",
+	[14] = "#85dc85",
+	[15] = "#e2637f",
+
+	[255] = 0,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	[256] = "#282a36", 
+	[257] = "#f8f8f2",
+	[258] = "#080808",
+	[259] = "#eeeeee",
 };
 
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor
+ * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
-unsigned int defaultcs = 15;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 259;
+unsigned int defaultbg = 258;
+unsigned int defaultcs = 256;
+unsigned int defaultrcs = 257;
 
 /*
  * Default shape of cursor
@@ -146,7 +153,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 4;
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers
